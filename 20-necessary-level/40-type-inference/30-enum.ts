@@ -21,10 +21,12 @@ const enum TimingFuncN {
   LINEAR = EASE * 2,
 }
 
-function frame(elem: string, dir: Directions, tFunc: TimingFunc) {
+type TimingFuncU = "ease" | "ease-in" | "linear";
+
+function frame(elem: string, dir: Directions, tFunc: TimingFuncU) {
   if (dir === Directions.RIGHT) {
     console.log(tFunc);
   }
 }
 
-frame("id", Directions.RIGHT, TimingFunc.LINEAR);
+frame("id", Directions.RIGHT, "ease");
