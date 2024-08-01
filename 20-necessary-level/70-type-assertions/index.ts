@@ -18,7 +18,16 @@
   const box = document.querySelector(".box") as HTMLElement;
   const input = document.querySelector("input") as HTMLInputElement;
 
-  const someNumber: number = input.value as any as number;
-  const someNumber2: number = input.value as unknown as number; //as work as with "any"
-  console.log(someNumber);
+  //const someNumber: number = input.value as any as number;
+  //const someNumber2: number = input.value as unknown as number; //this methos works as with "any"
+  const someNumber: number = +input.value; // This is the best part to have number from string
+  console.log(someNumber.toFixed);
+
+  let a = "value" as const;
+  let b = { f: 100 } as const;
+  let c = [] as const;
+
+  let value = "value";
+  let arr = ["arr", "abb"];
+  let obj = { f: 100 };
 })();
