@@ -23,10 +23,10 @@
     projectBudget: number;
   }
 
-  const mainProject: Project = {
-    ...department,
-    projectBudget: 5000,
-  };
+  // const mainProject: Project = {
+  //   ...department,
+  //   projectBudget: 5000,
+  // };
 
   function transfromDepartment(
     Department: Department,
