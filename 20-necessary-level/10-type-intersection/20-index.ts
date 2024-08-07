@@ -1,9 +1,11 @@
 (() => {
   type Confing = { protocol: "http" | "https"; port: 3000 | 3001 };
+
   type Role = {
     role: string;
   };
-  type ConfigWithRole = Confing & Role;
+
+  type ConfigWithRole = Confing & Role; //type intersection
 
   const serverConfig: ConfigWithRole = {
     protocol: "https",
@@ -20,7 +22,7 @@
   type StartFunction = (
     protocol: "http" | "https",
     port: 3000 | 3001
-  ) => string;
+  ) => string; //using the type as a code template
 
   const startServer: StartFunction = (
     protocol: "http" | "https",

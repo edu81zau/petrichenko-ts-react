@@ -1,22 +1,15 @@
 (() => {
-  //type Config = { protocol: "http" | "https"; port: 3000 | 3001 };
   interface Config {
     protocol: "http" | "https";
     port: 3000 | 3001;
     log: (msg: string) => void;
   }
-  /*
-    type Role = {
-      role: string;
-    };
-    type ConfigWithRole = Confing & Role;
-  */
 
   interface Role {
     role: string;
   }
 
-  interface ConfigWithRole extends Config, Role {}
+  interface ConfigWithRole extends Config, Role {} //combining interfaces into one
 
   const serverConfig: ConfigWithRole = {
     protocol: "https",
@@ -24,54 +17,21 @@
     role: "admin",
     log: (msg: string): void => console.log(msg),
   };
-  /*
-  const backupConfing: ConfigWithRole = {
-    protocol: "http",
-    port: 3000,
-    role: "sysadmin",
-  };
 
-*/
   type StartFunction = (
     protocol: "http" | "https",
     port: 3000 | 3001,
-    log: Function
+    log: Function //Built-in type. It is used when we do not know at all, then the function here will be.
   ) => string;
 
   const startServer: StartFunction = (
     protocol: "http" | "https",
-    port: 3000 | 3001
+    port: 3000 | 3001,
+    log: Function
   ): "Setver started" => {
-    console.log(`Server started on ${protocol}://server:${port}`);
+    log(`Server started on ${protocol}://server:${port}`);
     return "Setver started";
   };
 
   startServer(serverConfig.protocol, serverConfig.port, serverConfig.log);
-
-  /*
-  type AnimationTimingFunc = "ease" | "ease-out" | "ease-in";
-  type AnimationID = string | number;
-
-  function createAnimation(
-    id: AnimationID,
-    animName: string,
-    timingFunc: AnimationTimingFunc = "ease",
-    duration: number,
-    iterCount: "infinite" | number
-  ): void {
-    console.log(`${animName} ${timingFunc} ${duration} ${iterCount}`);
-  }
-  createAnimation("id", "fade", "ease-in", 5, "infinite");
-  */
-  //индексные свойства. Данный момент используется, когда известен тип элементов, но не знаем их количество
-
-  interface Styles {
-    [key: string]: string;
-  }
-
-  const styles: Styles = {
-    position: "absolute",
-    top: "20px",
-    left: "50px",
-  };
 })();
