@@ -12,7 +12,7 @@ enum TimingFunc {
   EASE = "ease",
   EASE_IN = "ease_in",
   LINEAR = "linear",
-  //ERROR = 5, //плохой тон мешать переменные разных типов в одно перечисление
+  //ERROR = 5, //плохой тон мешать переменные разных типов в одном перечисление
 }
 
 const enum TimingFuncN {
