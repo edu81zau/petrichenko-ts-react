@@ -15,6 +15,14 @@
   // function isNumber(n: string[] | number | boolean): n is number {
   //   return typeof n === "number";
   // }
+  /**
+  Что делает оператор is?
+
+    Проверяет тип значения: Оператор is позволяет проверить, принадлежит ли значение 
+    определенному типу.
+    Возвращает логическое значение: Результатом операции is является булево значение: 
+    true, если тип совпадает, и false в противном случае.
+  */
   function isNumber(n: unknown): n is number {
     return typeof n === "number";
   }
