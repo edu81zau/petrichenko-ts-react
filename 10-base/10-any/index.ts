@@ -2,6 +2,7 @@
 //let ageDate: number = 40;
 //const userNameDate: string = "John";
 
+//When we create a variable without specifying the type, we get a variable of type any
 //let salary: number;
 //salary = 5000;
 
@@ -12,7 +13,7 @@ const userObj: {
   isBirthdayDate: boolean;
   userNameDate: string;
   ageDate: number;
-} = JSON.parse(userData);
+} = JSON.parse(userData); //The function parse always returns type any
 
 console.log(userObj);
 console.log(
