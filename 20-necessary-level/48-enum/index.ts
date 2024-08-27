@@ -47,17 +47,20 @@
   frameU("dir", Directions.RIGHT, "ease");
 
   //Here we use the method of replacing the string type with a literal one
-
   const timingFunc = {
     EASE: "ease",
     EASE_IN: "ease-in",
     LINEAR: "linear",
-  } as const;
+  } as const; // constant assertions.
+  // Она позволяет явно указать компилятору, что объект, который вы описываете,
+  // должен рассматриваться как константа (immutable), то есть его свойства не могут быть
+  // изменены после инициализации.
 
   function frameO(
     elem: string,
     dir: Directions,
-    tFunc: keyof typeof timingFunc
+    tFunc: keyof typeof timingFunc // Тип tFunc должен быть одним из ключей объекта,
+    // тип которого совпадает с типом объекта, хранящегося в переменной timingFunc
   ): void {
     if (dir === Directions.RIGHT) {
       console.log(tFunc);

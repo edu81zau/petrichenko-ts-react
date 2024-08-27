@@ -12,6 +12,7 @@ enum TimingFunc {
   EASE = "ease",
   EASE_IN = "ease_in",
   LINEAR = "linear",
+  TEMP = `${EASE}-in`,
   //ERROR = 5, //плохой тон мешать переменные разных типов в одном перечисление
 }
 
